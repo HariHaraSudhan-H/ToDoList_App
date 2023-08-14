@@ -5,10 +5,10 @@ function App() {
   return (
     <div className="App">
       <h1 className={styles.heading}>Todolist</h1>
-      <Home/>
-      {/* <Routes>
+      {/* <Home/> */}
+      <Routes>
         <Route path="/" element={<Home />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }
