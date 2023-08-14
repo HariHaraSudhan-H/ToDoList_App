@@ -1,0 +1,111 @@
+.heading{
+  text-align: center;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: whitesmoke;
+}
+
+.btngroup{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.button{
+  margin: 0 0.5rem;
+  background-color: transparent;
+  border: 0px;
+}
+
+.buttonimages{
+  width: 20px;
+  height: 20px;
+}
+
+.todolist{
+  list-style: none;
+  margin: 5% 10%;
+  height: 400px;
+  overflow-y: scroll;
+  padding: 0 3%;
+}
+
+.todo{
+  width: 90%;
+  background-color: goldenrod;
+  color: aliceblue;
+  border-radius: 20px;
+  margin: 0.75rem 0;
+  height: 30px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Create todo styles */
+
+.createtodo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5% 10%;
+}
+
+.createtodoInput{
+  width: 60%;
+  height: 20%;
+  border-radius: 10px;
+  padding: 1%;
+  background-color: blanchedalmond;
+}
+
+.createtodoButton{
+  border: 0;
+  background-color: green;
+  font-weight: 500;
+  color: azure;
+  border-radius: 20px;
+  width: 10%;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .todolist{
+    margin: 5%;
+  }
+  .todo{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .todolist{
+    font-size: 0.90rem;
+    margin: 0%;
+  }
+  .todo{
+    width: 94%;
+  }
+  .button{
+    margin: 0 0.25rem;
+  }
+  .createtodoButton{
+    width: 20%;
+  }
+  
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3e423c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #858383;
+}
