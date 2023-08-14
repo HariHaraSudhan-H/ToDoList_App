@@ -70,6 +70,21 @@
   font-size: 0.9rem;
 }
 
+.editInput{
+  background-color: transparent;
+  padding: 1%;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.editTodo{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 @media screen and (max-width: 1000px) {
   .todolist{
     margin: 5%;

@@ -75,12 +75,14 @@ const Todo = (props) => {
           onSubmit={(e) => {
             handleEditSave(e, props.data.id);
           }}
+          className={styles.editTodo}
         >
           <input
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
             }}
+            className={styles.editInput}
           />
           <button className={styles.button}>Save</button>
         </form>
