@@ -84,7 +84,7 @@ const Todo = (props) => {
             }}
             className={styles.editInput}
           />
-          <button className={styles.button}>Save</button>
+          <button className={styles.button} style={{backgroundColor:'green',borderRadius:'20px'}}>Save</button>
         </form>
       ) : (
         <>
