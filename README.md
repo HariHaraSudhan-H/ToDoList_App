@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# To do list app using React
+
+![image](https://github.com/HariHaraSudhan-H/ToDoList_App/assets/115916940/296a0933-1f45-42e3-8bba-2c75684ecd9a)
+
+## Hosted Link : https://hariharasudhan-h.github.io/ToDoList_App/
+
+## Functionalities
+
+1. Adding Todo
+2. Deleting Todo
+3. Marking todo as completed
+4. Editing Todo
+5. Deleting completed todo's from list
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
