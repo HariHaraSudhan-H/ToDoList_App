@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import CreateToDo from "../Component/CreateToDo";
 import Todo from "../Component/Todo";
 import { useTodo } from "../hooks";
-import styles from '../Styles/home.module.css';
+import styles from "../Styles/home.module.css";
 
 const Home = () => {
+  const [editMode, setEditMode] = useState(false);
   const todos = useTodo();
   console.log(todos);
+
+  const handleEdit = (edit) => {
+    setEditMode(edit);
+  };
   return (
     <div>
       <CreateToDo />
@@ -17,7 +22,12 @@ const Home = () => {
           {todos.data.map((todo) => {
             return (
               <li key={todo.id}>
-                <Todo data={todo} />
+                <Todo
+                  data={todo}
+                  handleEdit={handleEdit}
+                  editModeOther={editMode}
+                  setEditModeOther={setEditMode}
+                />
               </li>
             );
           })}

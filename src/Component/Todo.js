@@ -4,9 +4,10 @@ import styles from "../Styles/home.module.css";
 import { deleteToDo, updateTodo } from "../api";
 
 const Todo = (props) => {
+  const {data,editModeOther,setEditModeOther} = props;
   const todos = useTodo();
-  const [title, setTitle] = useState(props.data.title);
-  const [completed, setCompleted] = useState(props.data.completed);
+  const [title, setTitle] = useState(data.title);
+  const [completed, setCompleted] = useState(data.completed);
   const [editMode, setEditMode] = useState(false);
 
   // handles deletion of todo's
@@ -25,6 +26,7 @@ const Todo = (props) => {
   // Handles edit icon click and makes edit mode on
   const handleEditClick = () => {
     setEditMode(true);
+    setEditModeOther(true);
   };
   const handleCompleteClick = (id) => {
     setCompleted(!completed);
@@ -59,6 +61,7 @@ const Todo = (props) => {
     };
     editTodo(id);
     setEditMode(false);
+    setEditModeOther(false);
   };
 
   // styles to make strikethrough for todos those are done
@@ -73,7 +76,7 @@ const Todo = (props) => {
       {editMode ? (
         <form
           onSubmit={(e) => {
-            handleEditSave(e, props.data.id);
+            handleEditSave(e, data.id);
           }}
           className={styles.editTodo}
         >
@@ -96,16 +99,16 @@ const Todo = (props) => {
                 alt="delete"
                 className={styles.buttonimages}
                 onClick={() => {
-                  handleDelete(props.data.id);
+                  handleDelete(data.id);
                 }}
               />
             </button>
-            <button className={styles.button}>
+            <button className={styles.button} disabled={editModeOther}
+                onClick={handleEditClick}>
               <img
                 src="https://cdn.icon-icons.com/icons2/1558/PNG/512/353430-checkbox-edit-pen-pencil_107516.png"
                 alt="edit"
                 className={styles.buttonimages}
-                onClick={handleEditClick}
               />
             </button>
             {completed ? (
@@ -115,7 +118,7 @@ const Todo = (props) => {
                   alt="removeComplete"
                   className={styles.buttonimages}
                   onClick={() => {
-                    handleCompleteClick(props.data.id);
+                    handleCompleteClick(data.id);
                   }}
                 />
               </button>
@@ -126,7 +129,7 @@ const Todo = (props) => {
                   className={styles.buttonimages}
                   alt="makeComplete"
                   onClick={() => {
-                    handleCompleteClick(props.data.id);
+                    handleCompleteClick(data.id);
                   }}
                 />
               </button>

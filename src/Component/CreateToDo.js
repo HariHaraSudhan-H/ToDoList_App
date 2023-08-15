@@ -27,20 +27,31 @@ const CreateToDo = () => {
     addTask();
     setTask("");
   };
-  
+
+  const handleRemove = (e)=>{
+    e.preventDefault();
+    const newtodo = todos.data.filter((todo)=>todo.completed!=true);
+    todos.updateTodoState(newtodo);
+  }
+
   return (
-    <form onSubmit={handleSubmit} className={styles.createtodo}>
-      <input
-        type="text"
-        value={task}
-        onChange={(e) => {
-          setTask(e.target.value);
-        }}
-        className={styles.createtodoInput}
-        placeholder="Enter the task..."
-      />
-      <button className={styles.createtodoButton}>Add Post</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit} className={styles.createtodo}>
+        <input
+          type="text"
+          value={task}
+          onChange={(e) => {
+            setTask(e.target.value);
+          }}
+          className={styles.createtodoInput}
+          placeholder="Enter the task..."
+        />
+        <button type="submit" className={styles.createtodoButton}>
+          Add Post
+        </button>
+        <button className={styles.createtodoButton} onClick={handleRemove} style={{backgroundColor:'red'}}>Remove Ticked</button>
+      </form>
+    </div>
   );
 };
 

@@ -44,7 +44,9 @@
 }
 
 /* Create todo styles */
-
+.header{
+  display: flex;
+}
 .createtodo{
   display: flex;
   flex-direction: row;
@@ -63,11 +65,12 @@
 .createtodoButton{
   border: 0;
   background-color: green;
-  font-weight: 500;
+  font-weight: 600;
   color: azure;
   border-radius: 20px;
   width: 10%;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+  margin: 0 1%;
 }
 
 .editInput{
